@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
+    "postbuild": "node ../../scripts/sync-vercel-output.cjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck:libs": "tsc --build ../../tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
