@@ -157,6 +157,9 @@ importers:
 
   .:
     devDependencies:
+      '@rollup/rollup-linux-x64-gnu':
+        specifier: 4.60.3
+        version: 4.60.3
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
@@ -4180,8 +4183,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.0-rc.3': {}
 
-  '@rollup/rollup-linux-x64-gnu@4.60.3':
-    optional: true
+  '@rollup/rollup-linux-x64-gnu@4.60.3': {}
 
   '@scalar/helpers@0.5.2': {}
 
