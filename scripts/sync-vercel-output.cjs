@@ -3,12 +3,18 @@ const path = require("node:path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const source = path.join(repoRoot, "artifacts", "dental-clinic", "dist", "public");
-const target = path.join(repoRoot, "public");
+const targets = [
+  path.join(repoRoot, "public"),
+  path.join(process.cwd(), "public"),
+  path.join(repoRoot, "artifacts", "api-server", "public"),
+];
 
 if (!fs.existsSync(source)) {
   console.error(`Expected build output was not found: ${source}`);
   process.exit(1);
 }
 
-fs.rmSync(target, { recursive: true, force: true });
-fs.cpSync(source, target, { recursive: true });
+for (const target of new Set(targets)) {
+  fs.rmSync(target, { recursive: true, force: true });
+  fs.cpSync(source, target, { recursive: true });
+}
